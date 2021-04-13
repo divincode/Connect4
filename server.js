@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 app.get('/',(req,res) => {
         console.log("hi");
-        
+        res.render("index");
     }
     );
 
