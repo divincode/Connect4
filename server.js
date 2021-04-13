@@ -17,13 +17,15 @@ app.use('/peerjs', peerServer);
 //const { reduce } = require('async');
 
 //const server = require('http').Server(app);
-app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.use(express.static("public"));
 
 app.get('/',(req,res) => {
-        console.log("hi");
+ //       console.log("hi");
         res.render("index");
     }
     );
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000, function() {
+    console.log("Server started on port 3000");
+  });
